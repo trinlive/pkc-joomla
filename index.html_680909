@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ทรงพระเจริญ</title>
+    <style>
+        body {
+
+            font-family: 'Sarabun', sans-serif;
+            /* ใช้ฟอนต์ Sarabun หรือฟอนต์อื่นที่เหมาะสม */
+            background: linear-gradient(to bottom, #6FA1DE, #CDDFF3);
+            /* ไล่สีฟ้า */
+            color: #333;
+            /* สีตัวอักษร */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        video {
+            width: 100%;
+            max-width: 1000px;
+            /* กำหนดความกว้างสูงสุดของวิดีโอ */
+            height: auto;
+            border-radius: 10px;
+            /* มุมโค้งมน */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            /* เงา */
+        }
+
+        img {
+            max-width: 100%;
+            /* ทำให้ภาพ responsive */
+            height: auto;
+            /* รักษาอัตราส่วนของภาพ */
+            display: block;
+            /* ลบช่องว่างด้านล่างภาพ */
+            margin: 20px auto;
+            /* จัดกลางภาพ */
+            border-radius: 10px;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+
+        .content {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* พื้นหลังสีขาวโปร่งแสง */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            /* เงา */
+            margin-top: 10px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #c4aa29;
+            /* สีเหลือง */
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        button:hover {
+            background-color: #FFC300;
+            /* สีเหลืองเข้มขึ้นเมื่อ hover */
+        }
+
+        @media (max-width: 768px) {
+            video {
+                width: 100%;
+            }
+
+            .content {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            button {
+                font-size: 1em;
+            }
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery img {
+            margin: 10px;
+            width: 200px;
+            /* ปรับขนาดตามต้องการ */
+            height: 50px;
+            border-radius: 8px;
+            /* เพิ่มมุมโค้ง */
+        }
+    </style>
+</head>
+
+<body>
+<div align="center">
+  <p><img src="https://pakkretcity.go.th/img680812.jpg" alt="" width="1050" height="767" usemap="#Map" border="0"/>
+</div>
+    <div class="gallery">
+        <a href="http://www.formom.moi.go.th/page/save.php" target="_blank"><img src="https://pakkretcity.go.th/btn-bless.png" alt="ลงนามถวายพระพร"></a>
+		<a href="https://www.royaloffice.th/03/08/2025/ทรงมั่นในพระศาสนา/" target="_blank"><img src="https://pakkretcity.go.th/btn-royalduties.png" alt="พระราชกรณียกิจ"></a>
+        <a href="https://pakkretcity.go.th/index.php" /><img src="https://pakkretcity.go.th/btn-entersite.png" alt="เข้าสู่เว็บไซต์เทศบาลนครปากเกร็ด"></a>
+    </div>
+    <!-- <a href="https://pakkretcity.go.th/index.php" alt="เข้าสู่หน้าหลักเว็บไซต์">
+        <img src="https://pakkretcity.go.th/btn_king2568.png" alt="เข้าสู่หน้าหลักเว็บไซต์" />
+    </a> -->
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+.uk-modal {
+  z-index: 1050;
+}
+.uk-button-rounded {
+  border-radius: 5px;
+}
+.uk-button-round {
+  border-radius: 500px;
+}
+.uk-badge-success {
+  color: $badge-color;
+  background-color: $global-success-background;
+}
+.uk-grid-divider:not(.uk_divider_2) {
+  &:not(.uk-grid-stack) {
+    > .uk-grid-margin {
+      margin-top: ($grid-gutter-vertical * 2);
+      > *:first-child {
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          top: (-$grid-gutter-vertical);
+          left: 0;
+          right: 0;
+          border-top: $grid-divider-border-width solid $grid-divider-border;
+        }
+      }
+      @media (min-width: $breakpoint-large) {
+        margin-top: ($grid-gutter-vertical-l * 2);
+        > *:first-child {
+          &:before {
+            top: (-$grid-gutter-vertical-l);
+          }
+        }
+      }
+    }
+    &.uk-grid-small, &.uk-grid-row-small {
+      > .uk-grid-margin {
+        margin-top: ($grid-small-gutter-vertical * 2);
+        > *:first-child {
+          &:before {
+            top: (-$grid-small-gutter-vertical);
+          }
+        }
+      }
+    }
+    &.uk-grid-medium, &.uk-grid-row-medium {
+      > .uk-grid-margin {
+        margin-top: ($grid-medium-gutter-vertical * 2);
+        > *:first-child {
+          &:before {
+            top: (-$grid-medium-gutter-vertical);
+          }
+        }
+      }
+    }
+    &.uk-grid-large, &.uk-grid-row-large {
+      > .uk-grid-margin {
+        margin-top: ($grid-large-gutter-vertical * 2);
+        > *:first-child {
+          &:before {
+            top: (-$grid-large-gutter-vertical);
+          }
+        }
+      }
+    }
+  }
+}
+.uk-modal-dialog, .uk-card-default {
+  background-color: var(--bs-body-bg);
+}
+blockquote {
+  color: var(--bs-heading-color,inherit);
+}
+.uk-light .hikashop_product_quantity_div .uk-input {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+@include color-mode(dark) {
+  .uk-text-meta {
+    color: #dddddd;
+  }
+  .uk-breadcrumb > :last-child > span, .uk-breadcrumb > :last-child > a:not([href]) {
+    color: #aaaaaa;
+  }
+  .uk-button-text::before {
+    border-color: #ffffff;
+  }
+  .uk-text-lead {
+    color: #fff;
+  }
+  .uk-form-label {
+    color: var(--bs-body-color);
+  }
+  .uk-heading-line > ::before, .uk-heading-line > ::after {
+    border-color: var(--bs-border-color);
+  }
+  .uk-button-primary {
+    &:hover {
+      color: $button-primary-color;
+    }
+  }
+  .uk-table-divider {
+    > * {
+      border-color: var(--bs-border-color) !important;
+      > * {
+        border-color: var(--bs-border-color) !important;
+      }
+    }
+  }
+  .uk-subnav > .uk-active > a {
+    color: #fff;
+  }
+}

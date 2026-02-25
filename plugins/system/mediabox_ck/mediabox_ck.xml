@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="system" method="upgrade">
+	<name>MEDIABOXCK_NAME</name>
+	<ckpro>0</ckpro>
+	<variant>free</variant>
+	<author>Cédric KEIFLIN</author>
+	<creationDate>Décembre 2010</creationDate>
+	<copyright>Cédric KEIFLIN</copyright>
+	<license>http://www.gnu.org/licenses/gpl.html</license>
+	<authorEmail>ced1870@gmail.com</authorEmail>
+	<authorUrl>https://www.joomlack.fr</authorUrl>
+	<version>2.8.1</version>
+	<description>MEDIABOXCK_PLUG_DESC</description>
+	<scriptfile>install.php</scriptfile>
+	<files>
+		<filename plugin="mediabox_ck">mediabox_ck.php</filename>
+		<filename>mediaboxck_mobile_detect.php</filename>
+		<folder>assets</folder>
+		<folder>elements</folder>
+		<folder>language</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_system_mediabox_ck.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_mediabox_ck.sys.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.plg_system_mediabox_ck.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.plg_system_mediabox_ck.sys.ini</language>
+	</languages>
+	<updateservers>
+		<server type="extension" priority="1" name="Mediabox CK Light Update">https://update.joomlack.fr/mediaboxck_light_update.xml</server>
+	</updateservers>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/plugins/system/mediabox_ck/elements">
+				<field 
+					name="mediaboxckinterface" 
+					type="mediaboxckinterface" 
+				/>
+				<field 
+					name="mediaboxckinfo" 
+					type="mediaboxckinfo" 
+				/>
+				<field 
+					name="mediaboxcklight" 
+					type="mediaboxcklight" 
+				/>
+				<field 
+					name="mediaboxckproducts" 
+					type="mediaboxckproducts" 
+				/>
+			</fieldset>
+			<fieldset name="general" label="MEDIABOXCK_GENERAL_LABEL">
+				<field 
+					name="pageselect" 
+					type="mediaboxcktext" 
+					default="0" 
+					label="MEDIABOXCK_PAGESELECT" 
+					description="MEDIABOXCK_PAGESELECT_DESC"
+					icon="page_delete.png"
+				/>
+				<field 
+					name="attribtype" 
+					type="mediaboxckradio" 
+					default="rel" 
+					label="MEDIABOXCK_ATTRIBTYPE" 
+					description="MEDIABOXCK_ATTRIBTYPE_DESC" 
+					class="btn-group"
+					icon="key.png"
+					>
+					<option value="className">CLASSNAME</option>
+					<option value="rel">REL</option>
+				</field>
+				<field 
+					name="attribname" 
+					type="mediaboxcktext" 
+					default="lightbox" 
+					label="MEDIABOXCK_ATTRIBNAME" 
+					description="MEDIABOXCK_ATTRIBNAME_DESC"
+					icon="text_signature.png"
+				/>
+				<field 
+					name="fullwidth" 
+					type="mediaboxckradio" 
+					default="0" 
+					label="MEDIABOXCK_FULLWIDTH" 
+					description="MEDIABOXCK_FULLWIDTH_DESC" 
+					class="btn-group" 
+					icon="arrow_out.png"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field 
+					name="defaultwidth" 
+					type="mediaboxcktext" 
+					default="640" 
+					label="MEDIABOXCK_DEFAULTWIDTH" 
+					description="MEDIABOXCK_DEFAULTWIDTH_DESC"
+					icon="width.png"
+					showon="fullwidth:0"
+				/>
+				<field 
+					name="defaultheight" 
+					type="mediaboxcktext" 
+					default="360" 
+					label="MEDIABOXCK_DEFAULTHEIGHT" 
+					description="MEDIABOXCK_DEFAULTHEIGHT_DESC"
+					icon="height.png"
+					showon="fullwidth:0"
+				/>
+				<field 
+					name="showcaption" 
+					type="mediaboxckradio" 
+					default="1" 
+					label="MEDIABOXCK_SHOWCAPTION" 
+					description="MEDIABOXCK_SHOWCAPTION_DESC" 
+					class="btn-group" 
+					icon="text_dropcaps.png"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field 
+					name="showcounter" 
+					type="mediaboxckradio" 
+					default="1" 
+					label="MEDIABOXCK_SHOWCOUNTER" 
+					description="MEDIABOXCK_SHOWCOUNTER_DESC" 
+					class="btn-group" 
+					icon="control_end.png"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field 
+					name="showshare" 
+					type="mediaboxckproonly" 
+					default="0" 
+					label="MEDIABOXCK_SHOWSHARE" 
+					description="MEDIABOXCK_SHOWSHARE_DESC" 
+					class="btn-group" 
+					icon="share.png"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field 
+					name="loop" 
+					type="mediaboxckradio" 
+					default="0" 
+					label="MEDIABOXCK_LOOP" 
+					description="MEDIABOXCK_LOOP_DESC" 
+					class="btn-group" 
+					icon="control_repeat.png"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field 
+					name="showtoolbar" 
+					type="mediaboxckradio" 
+					default="0" 
+					label="MEDIABOXCK_TOOLBAR" 
+					description="MEDIABOXCK_TOOLBAR_DESC" 
+					class="btn-group" 
+					icon="projection-screen.png"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field 
+					name="diapotime" 
+					type="mediaboxcktext" 
+					default="3000" 
+					label="MEDIABOXCK_DIAPOTIME" 
+					description="MEDIABOXCK_DIAPOTIME_DESC"
+					icon="hourglass.png"
+					suffix="ms"
+					showon="showtoolbar:1"
+				/>
+				<field 
+					name="diapoAutoplay" 
+					type="mediaboxckradio" 
+					default="0" 
+					label="MEDIABOXCK_DIAPOAUTOPLAY" 
+					description="MEDIABOXCK_DIAPOAUTOPLAY_DESC" 
+					class="btn-group" 
+					icon="control_play.png"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field 
+					name="showZoom" 
+					type="mediaboxckproonly" 
+					default="0" 
+					label="MEDIABOXCK_USEZOOM" 
+					description="MEDIABOXCK_USEZOOM_DESC" 
+					class="btn-group" 
+					icon="magnifier_zoom_in.png"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field 
+					name="sigplusLegacy" 
+					type="mediaboxckproonly" 
+					default="0" 
+					label="MEDIABOXCK_SIG_COMPATIBILTY" 
+					description="MEDIABOXCK_SIG_COMPATIBILTY_DESC" 
+					class="btn-group" 
+					icon="switch.png"
+					/>
+			</fieldset>
+			<fieldset name="styles" label="MEDIABOXCK_STYLES_LABEL">
+				<field 
+					name="theme" 
+					type="mediaboxcklist" 
+					default="default" 
+					label="MEDIABOXCK_THEME" 
+					icon="paintbrush.png"
+					>
+					<option value="defalut">MEDIABOXCK_DEFAULT</option>
+					<option value="theme1">Theme 1</option>
+				</field>
+				<field 
+					name="toolbarsize" 
+					type="mediaboxcklist" 
+					default="normal" 
+					label="MEDIABOXCK_TOOLBARSIZE" 
+					icon="style.png"
+					>
+					<option value="normal">MEDIABOXCK_NORMAL</option>
+					<option value="big">MEDIABOXCK_BIG</option>
+				</field>
+				<field 
+					name="cornerradius" 
+					type="mediaboxcktext" 
+					default="10" 
+					label="MEDIABOXCK_CORNERRADIUS" 
+					description="MEDIABOXCK_CORNERRADIUS_DESC"
+					icon="border_radius_bl.png"
+					suffix="px"
+				/>
+				<field 
+					name="shadowoffset" 
+					type="mediaboxcktext" 
+					default="5" 
+					label="MEDIABOXCK_SHADOWOFFSET" 
+					description="MEDIABOXCK_SHADOWOFFSET_DESC"
+					icon="shadow_blur.png"
+					suffix="px"
+				/>
+				<field 
+					name="bgcolor" 
+					type="color" 
+					default="#1a1a1a" 
+					label="MEDIABOXCK_BGCOLOR" 
+					description="MEDIABOXCK_BGCOLOR_DESC" 
+				/>
+				<field 
+					name="text1color" 
+					type="color" 
+					default="#999" 
+					label="MEDIABOXCK_TEXT1COLOR" 
+					description="MEDIABOXCK_TEXT1COLOR_DESC" 
+				/>
+				<field 
+					name="text2color" 
+					type="color" 
+					default="#fff" 
+					label="MEDIABOXCK_TEXT2COLOR" 
+					description="MEDIABOXCK_TEXT2COLOR_DESC" 
+				/>
+				<field 
+					name="overlayopacity" 
+					type="mediaboxcktext" 
+					default="0.7" 
+					label="MEDIABOXCK_OVERLAYOPACITY" 
+					description="MEDIABOXCK_OVERLAYOPACITY_DESC" 
+					icon="layers.png"
+				/>
+				<field 
+					name="overlaycolor" 
+					type="color" 
+					default="#000" 
+					label="MEDIABOXCK_OVERLAYCOLOR" 
+					description="MEDIABOXCK_OVERLAYCOLOR_DESC" 
+				/>
+				<field 
+					name="overlaybgimage" 
+					type="media" 
+					default="" 
+					label="MEDIABOXCK_OVERLAYIMAGE" 
+					description="MEDIABOXCK_OVERLAYIMAGE_DESC" 
+				/>
+			</fieldset>
+			<fieldset name="effect" label="MEDIABOXCK_EFFECT_LABEL">
+				<field 
+					name="resizeopening" 
+					type="mediaboxckradio" 
+					default="1" 
+					label="MEDIABOXCK_RESIZEOPENING" 
+					description="MEDIABOXCK_RESIZEOPENING_DESC" 
+					class="btn-group" 
+					icon="shape_handles.png"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field 
+					name="resizeduration" 
+					type="mediaboxcktext" 
+					default="240" 
+					label="MEDIABOXCK_RESIZEDURATION" 
+					description="MEDIABOXCK_RESIZEDURATION_DESC" 
+					suffix="ms"
+					icon="hourglass.png"
+				/>
+				<field 
+					name="initialwidth" 
+					type="mediaboxcktext" 
+					default="320" 
+					label="MEDIABOXCK_INITIALWIDTH" 
+					description="MEDIABOXCK_INITIALWIDTH_DESC"
+					suffix="px"
+					icon="width.png"
+				/>
+				<field 
+					name="initialheight" 
+					type="mediaboxcktext" 
+					default="180" 
+					label="MEDIABOXCK_INITIALHEIGHT" 
+					description="MEDIABOXCK_INITIALHEIGHT_DESC" 
+					suffix="px"
+					icon="height.png"
+				/>
+			</fieldset>
+			<fieldset name="mobile" label="MEDIABOXCK_MOBILE_LABEL">
+				<field
+					name="mobile_enable"
+					type="mediaboxckradio"
+					default="1"
+					label="MEDIABOXCK_MOBILE_ENABLE_LABEL"
+					description="MEDIABOXCK_MOBILE_ENABLE_DESC"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="mobile_force"
+					type="mediaboxckradio"
+					default="0"
+					label="MEDIABOXCK_MOBILE_FORCE_LABEL"
+					description="MEDIABOXCK_MOBILE_FORCE_DESC"
+					class="btn-group"
+					showon="mobile_enable:1"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="mobile_resolution"
+					type="mediaboxcktext"
+					label="MEDIABOXCK_MOBILE_RESOLUTION_LABEL"
+					description="MEDIABOXCK_MOBILE_RESOLUTION_DESC"
+					default="640"
+					icon="width.png"
+					suffix="px"
+				/>
+			</fieldset>
+			<fieldset name="gallery" label="MEDIABOXCK_GALLERY_LABEL">
+				<field
+					name="gallery_checkpro"
+					type="mediaboxckproonly"
+				/>
+			</fieldset>
+			<fieldset name="autoload" label="MEDIABOXCK_AUTOLOAD_FIELDSET_LABEL">
+				<field
+					name="autoload"
+					type="mediaboxckradio"
+					default="0"
+					label="MEDIABOXCK_AUTOLOAD_LABEL"
+					description="MEDIABOXCK_AUTOLOAD_DESC"
+					class="btn-group"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field 
+					name="autoload_filter" 
+					type="list" 
+					default="0"
+					label="MEDIABOXCK_AUTOLOAD_FILTERBY_LABEL"
+					description="MEDIABOXCK_AUTOLOAD_FILTERBY_DESC"
+					showon="autoload:1"
+				>
+					<option value="0">MEDIABOXCK_ALL_IMAGES</option>
+					<option value="1">MEDIABOXCK_ONLY_CLASS</option>
+					<option value="2">MEDIABOXCK_EXCEPT_CLASS</option>
+                </field>
+				<field 
+					name="autoload_filter_class" 
+					type="text" 
+					default=""
+					label="MEDIABOXCK_IMAGE_CLASS_FILTER_LABEL"
+					description="MEDIABOXCK_IMAGE_CLASS_FILTER_DESC"
+					showon="autoload:1"
+				/>
+				<field
+					name="autoload_group"
+					type="mediaboxckradio"
+					default="0"
+					label="MEDIABOXCK_AUTOLOAD_GROUP_LABEL"
+					description="MEDIABOXCK_AUTOLOAD_GROUP_DESC"
+					class="btn-group"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+				name="autocreatethumbs"
+				type="mediaboxckproonly"
+				label="MEDIABOXCK_AUTOCREATETHUMBS_LABEL"
+				/>
+				<field
+					name="thumbnail_width"
+					label="MEDIABOXCK_THUMB_WIDTH_LABEL"
+					type="mediaboxckproonly"
+				/>
+				<field
+					name="thumbnail_height"
+					label="MEDIABOXCK_THUMB_HEIGHT_LABEL"
+					type="mediaboxckproonly"
+				/>
+				<field
+					name="thumbnail_quality"
+					label="MEDIABOXCK_THUMB_QUALITY_LABEL"
+					type="mediaboxckproonly"
+					/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

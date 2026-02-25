@@ -1,0 +1,73 @@
+.border {
+	border-top: 1px none #1C3187;
+	border-right: 1px solid #1C3187;
+	border-bottom: 1px none #1C3187;
+	border-left: 1px solid #1C3187;
+}
+.link_menu_buttom {  font-family: Tahoma; font-size: 11px; font-weight: bold; color: #FFFF01; text-decoration: none}
+a:hover {  color: #FFFFFF; text-decoration: underline}
+.text_thai_bule01 {  font-family: "MS Sans Serif"; font-size: 13px; color: #FFFF99; text-decoration: none}
+.text_thai_white { font-family: "MS Sans Serif"; font-size: 13px; color: #FFFFFF; text-decoration: none }
+.text_eng_white_small { font-family: Arial; font-size: 9px; color: #FFFFFF; text-decoration: none }
+.text_thai_red { font-family: "MS Sans Serif"; font-size: 16px; color: #FF0000; text-decoration: none }
+.text_thai_orange { font-family: "MS Sans Serif"; font-size: 13px; color: #FF9900; text-decoration: none }
+.text_thai_blue02 { font-family: "MS Sans Serif"; font-size: 13px; color: #1C3288; text-decoration: none }
+.text_thai_yellow { font-family: "MS Sans Serif"; font-size: 12px; font-weight: bold; color: #FFFF01; text-decoration: none }
+.text_thai_yellow_big { font-family: Tahoma; font-size: 20px; font-weight: bold; color: #FFFF00; text-decoration: none }
+.buttom {  font-family: Tahoma; font-size: 11px; font-weight: bold; color: #FFFFFF; background-color: #FF9900; border: 1px #1C3187 solid}
+.text_eng_yellow_small { font-family: Arial; font-size: 9px; font-weight: bold; color: #FFFF01; text-decoration: none }
+.text_thai_yellow_small { font-family: Tahoma; font-size: 10px; color: #FFFF01; text-decoration: none }
+.text_thai_red_big { font-family: Tahoma; font-size: 20px; font-weight: bold; color: #FF0000; text-decoration: none }
+.borderinput {
+	border-top: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+	border-left: 1px solid #FFFFFF;
+	background-color: #c7edf5;
+	font-family: "MS Sans Serif";
+	font-size: 14px;
+	color: #196aaa;
+	text-decoration: none;
+
+
+}
+.borderinputwhite {
+	background-color: #FFFFFF;
+	font-family: "MS Sans Serif";
+	font-size: 12px;
+	color: #666666;
+	text-decoration: none;
+	border: 1px solid #999999;
+
+}
+.text_thai_white_big {
+	font-family: "MS Sans Serif";
+	font-size: 16px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+.link_menu_buttom_big {
+font-family: "MS Sans Serif"; font-size: 16px; font-weight: bold; color: #FFFF01; text-decoration: none
+}
+.text_thai_black_big {
+
+	font-family: "MS Sans Serif";
+	font-size: 16px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+}
+.text_thai_blue_big {
+
+
+	font-family: "MS Sans Serif";
+	font-size: 18px;
+	color: #0000FF;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:link.text_thai_red { color:#ff0000 }
+a:visited.text_thai_red { color:#ff0000 }
+a:hover.text_thai_red{ color:#ff0000; text-decoration:underline }

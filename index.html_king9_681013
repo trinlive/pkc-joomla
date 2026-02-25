@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เทศบาลนครปากเกร็ด</title>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: linear-gradient(to bottom, #EED59D, #EEEEEE);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #c4aa29;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        button:hover {
+            background-color: #FFC300;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery img {
+            margin: 10px;
+            width: 200px;
+            height: 50px;
+            border-radius: 8px;
+            cursor: pointer;
+            /* เปลี่ยนให้เป็นมือเมื่อ hover */
+        }
+
+        /* Styles for the lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox video {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5em;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div align="center">
+        <p><img src="https://pakkretcity.go.th/img_681013.jpg" alt="" width="1050" height="767" usemap="#Map"
+                border="0" /></p>
+    </div>
+    <div class="gallery">
+        <a href="#" id="videoLink"><img src="https://pakkretcity.go.th/btn02_681013.png" alt="พระราชกรณียกิจ"></a>
+        <a href="https://pakkretcity.go.th/index.php"><img src="https://pakkretcity.go.th/btn01_681013.png"
+                alt="เข้าสู่เว็บไซต์เทศบาลนครปากเกร็ด"></a>
+    </div>
+
+    <!-- Lightbox for video -->
+    <div class="lightbox" id="lightbox">
+        <button class="close-button" id="closeButton">&times;</button>
+        <video id="lightboxVideo" controls>
+            <source src="https://pakkretcity.go.th/king9.mp4" type="video/mp4">
+            วิดีโอของคุณไม่สามารถเล่นได้
+        </video>
+    </div>
+
+    <script>
+        const videoLink = document.getElementById('videoLink');
+        const lightbox = document.getElementById('lightbox');
+        const closeButton = document.getElementById('closeButton');
+        const lightboxVideo = document.getElementById('lightboxVideo');
+
+        videoLink.addEventListener('click', function (event) {
+            event.preventDefault(); // ป้องกันการกระทำเริ่มต้นของลิงก์
+            lightbox.classList.add('active'); // แสดง lightbox
+            lightboxVideo.play(); // เล่นวิดีโอ
+        });
+
+        closeButton.addEventListener('click', function () {
+            lightbox.classList.remove('active'); // ซ่อน lightbox
+            lightboxVideo.pause(); // หยุดวิดีโอ
+            lightboxVideo.currentTime = 0; // รีเซ็ตเวลาเล่นวิดีโอ
+        });
+
+        // ปิด lightbox เมื่อคลิกภายนอกวิดีโอ
+        lightbox.addEventListener('click', function (event) {
+            if (event.target === lightbox) {
+                closeButton.click(); // เรียกใช้ปุ่มปิด
+            }
+        });
+    </script>
+</body>
+
+</html>

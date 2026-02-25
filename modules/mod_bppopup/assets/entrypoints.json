@@ -1,0 +1,12 @@
+{
+  "entrypoints": {
+    "module": {
+      "css": [
+        "modules/mod_bppopup/assets/module-e3545e.css"
+      ],
+      "js": [
+        "modules/mod_bppopup/assets/module-e3545e.js"
+      ]
+    }
+  }
+}

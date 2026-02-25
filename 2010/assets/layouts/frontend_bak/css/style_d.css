@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+.titlenews {width:220px; height:25px; line-height:25px;display:block; float:left; color:#000; font-size:24px;font-family: 'true_mediumregular'; border-bottom:1px #ddd dotted;  padding:6px 0;}
+
+
+#news {width:220px; height:auto;padding:0 0 10px 0;}
+#news ul{margin:0; padding:0; list-style:none;}
+#news ul li{width:220px; height:auto; line-height:20px;display:block; float:left; color:#6C798C; font-size:12px;font-family: 'true_mediumregular'; border-bottom:1px #ddd dotted;  padding:6px 0;}
+#news ul li a{color:#6C798C; font-size:12px;font-family: 'true_mediumregular'; }
+#news ul li a:hover{color:#000; font-size:12px;font-family: 'true_mediumregular'; }
+
+#newsall {width:220px; height:auto;padding:0 0 10px 0;}
+#newsall ul{margin:0; padding:0; list-style:none;}
+#newsall ul li{width:220px; height:auto; line-height:20px;display:block; float:left; color:#01AFEF; font-size:12px;font-family: 'true_mediumregular'; padding:10px 0;}
+#newsall ul li a{color:#01AFEF; font-size:12px;font-family: 'true_mediumregular'; }
+#newsall ul li a:hover{color:#000; font-size:12px;font-family: 'true_mediumregular'; }
+
+#info {width:220px; height:auto;padding:0 0 10px 0;}
+#info ul{margin:0; padding:0; list-style:none;}
+#info ul li{width:220px; height:auto; line-height:25px;display:block; float:left; color:#6C798C; font-size:14px;font-family: 'true_mediumregular'; border-bottom:1px #ddd dotted; padding:6px 0;}
+#info ul li a{color:#6C798C; font-size:14px;font-family: 'true_mediumregular'; }
+#info ul li a:hover{color:#000; font-size:14px;font-family: 'true_mediumregular'; }
+
+#info ul li .active{width:220px; height:auto; line-height:25px;display:block; float:left; color:#000; font-size:14px;font-family: 'true_mediumregular'; padding:6px 0;}
+

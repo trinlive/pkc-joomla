@@ -1,0 +1,33 @@
+# เปิดใช้งาน RewriteEngine
+RewriteEngine On
+
+# กำหนด Base Directory (หากจำเป็น)
+# RewriteBase /
+
+# กำหนด DirectoryIndex ให้โหลด index.html ก่อน index.php
+DirectoryIndex index.html index.php
+
+
+# ยกเว้น index.php และ index.html ไม่ต้อง Rewrite
+RewriteRule ^index\.php$ - [L]
+#RewriteRule ^index\.html$ - [L]
+
+# ตรวจสอบว่าไฟล์ที่ร้องขอไม่ใช่ไฟล์จริง
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# ตรวจสอบว่าไฟล์ที่ร้องขอไม่ใช่โฟลเดอร์จริง
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# ทุกอย่างที่ร้องขอ จะถูกส่งไปยัง index.php แต่ URL จะไม่แสดง index.php
+RewriteRule ^(.*)$ /index.php [L,QSA]
+
+# Disable caching of index.html
+<Files "index.html">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate"
+    Header set Expires 0
+</Files>
+
+
+#  ต้องการยกเลิกการ redirect ไปที่ index.html ชั่วคราว > comment 2 บรรทัดนี้
+# RewriteCond %{REQUEST_URI} ^/index\.html$
+# RewriteRule ^index\.html$ /index.php [L,R=301]

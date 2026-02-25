@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายงานการพบ | อัปโหลดไฟล์ให้หน่วยงาน</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2em;
+            background: #f9f9f9;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        button {
+            margin-top: 5px;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        button {
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            margin-top: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>📋 รายงานการพบ</h2>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label>ชื่อ-นามสกุล *</label>
+        <input type="text" name="fullname" required>
+
+        <label>หมายเลขโทรศัพท์ *</label>
+        <input type="tel" name="phone" required>
+
+        <label>อีเมล (ไม่บังคับ)</label>
+        <input type="email" name="email">
+
+        <label>ID Line *</label>
+        <input type="text" name="lineid" required>
+
+        <label>รายละเอียดการรายงาน *</label>
+        <textarea name="report_detail" placeholder="กรอกรายละเอียดเหตุการณ์ที่พบ..." required></textarea>
+
+        <label>แนบไฟล์ (สามารถเลือกหลายไฟล์)</label>
+        <input type="file" name="files[]" multiple required>
+
+        <button type="submit">📤 ส่งรายงาน</button>
+    </form>
+</body>
+
+</html>

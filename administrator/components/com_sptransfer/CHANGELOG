@@ -1,0 +1,194 @@
+Available Releases
+------------------
+
+File                            Joomla! version
+----                            ---------------
+pkg_sptransfer_2.xx.xx.zip            2.5
+pkg_sptransfer_3.xx.xx.zip            3.0
+
+Version       Date          Comments
+-------       ----          --------
+1.0.0                       Initial release
+1.0.1                       Menus and modules added
+1.0.2                       Added index.html in folder admin/models/fields
+1.0.3                       Fix bug with selection in tables view
+                            Added check on _ underscore for db prefix
+1.0.4                       Replace items
+1.0.5                       Remove MySQLi restriction
+1.1.0                       Added GUI functionality
+1.1.1                       Gui for users and contacts
+1.1.2                       Gui for weblinks, newsfeeds, banner clients, banners
+1.1.3                       Gui for menus, modules
+1.1.4                       Corrected deletion in case of replace table->request to db->request
+1.1.5                       MySQL compatibility
+1.1.6                       Auto choose filed to copy
+1.1.7                       Remove Auto choose
+                            Transfer User Notes
+1.2.0                       Individual records transfer
+1.2.1                       Installation tables fix
+1.2.2                       Open log in new window
+1.2.3                       Fix IeCursorFix
+1.2.4                       MySQL fix
+2.1.0                       Restructur and include libraries
+                            The description is optional and defaults to the name
+2.1.1                       Fix users
+                            Bring profiles and notes
+2.1.2                       Single article menu item broken link
+2.1.3                       !result to !$result
+2.1.6                       False check during Database View table creation
+3.0.0                       3.0 Compatible
+3.0.1                       Create new table failed during database transfer
+3.0.2                       Controller redirect
+2.1.4 & 3.0.3               delete individual items from history log
+2.1.5 & 3.0.4               IE compatible
+3.0.5                       menus from 2.5
+2.1.7 & 3.0.6               JText causes problem in k2 tables
+2.1.8 & 3.0.7               Do not compare tables
+2.1.9 & 3.0.8 (18/03/2013)  Use CYEND library classes
+2.2.0 & 3.2.0 (04/04/2013)  Transfer files
+2.2.1         (08/05/2013)  Database transfer did not create table if not exist.
+2.3.0 & 3.3.0 (11/05/2013)  Integrating with SP Staging
+2.3.1 & 3.3.1 (04/06/2013)  Add pagination in database view
+2.3.2 & 3.3.2 (30/07/2013)  Joomla 3.1.4 compatible
+2.3.3 & 3.3.3 (28/08/2013)  Fix pagination on database view
+2.3.4 & 3.3.4 (29/08/2013)  support ssl in FTP
+2.3.5 & 3.3.5 (30/08/2013)  Check if FTP extension is enabled in PHP
+2.3.6 & 3.3.6 (02/08/2013)  Fix problem with ftp_ssl_connect
+2.3.7 & 3.3.7 (18/09/2013)  Select all modules not working
+                            Pagination not working
+2.3.8 & 3.3.8 (21/09/2013)  Copy permissions from assets table
+2.4.0 & 3.4.0 (26/09/2013)  tags transfer
+2.4.1 & 3.4.1 (02/10/2013)  Users and Content categories use models for saving.
+2.4.2 & 3.4.2 (03/10/2013)  Support Joomla! 3.2 transfer of the follow:
+                            - two factor authentication
+                            - tags
+2.4.3 & 3.4.3 (04/10/2013)  Support Joomla! 3.2 transfer of the follow:
+                            - versioning
+2.5.0 & 3.5.0 (09/10/2013)  Memory problem with huge amount of data.
+2.5.1 & 3.5.1 (24/10/2013)  Remove dot from log to improve speed
+2.5.2 & 3.5.2 (26/10/2013)  Article's images and links not transferred.
+2.5.3 & 3.5.3 (26/11/2013)  False with $this->$
+2.5.4 & 3.5.4 (27/11/2013)  Fix missing variable
+2.5.5 & 3.5.5 (22/12/2013)  Fix users passwords for j3.2.1
+
+SPRS
+----
+Lines starting with # (hash) indicate bug fixes
+Lines starting with + (plus) indicate added features
+Lines starting with - (dash) indicate removed features
+Lines starting with ~ (tilde) indicate miscellaneous changes
+All other lines are comments and/or notes
+
+(25/01/2014) 3.5.6
+~ Support new release system
+
+(03/02/2014) 3.5.7
+# Fix problem with transferring multi language articles
+
+(14/04/2014) 3.6.0
++ Transfer items by batches with the use of js.
+
+(26/04/2014) 3.6.1
+# Removed obsolete link from back end menu of the component to the monitoring log.
+
+(06/05/2014) 3.6.2
+# In some occasions prefix was mispelled due to JText class. We removed the use of the class.
+
+(08/05/2014) 3.6.3
+# When selecting individual items, all are transferred.
+# When selective users not present in source site, they are created in destination.
++ Add paging while selecting database tables.
+
+(22/05/2014) 3.6.4
+# Problem saving articles in Joomla 3.3
+
+(26/05/2014) 3.6.5
+# In database view do not transfer null values.
+
+(03/10/2014) 3.6.6
+~ changed error message from getTraceAsString to getMessage
+
+(13/10/2014) 3.6.7
+# Remove strict standards error
+
+(06/01/2015) 3.6.8
+# User profiles not transferred.
+
+(16/02/2015) 3.6.9
+# When files start with a number, and they have spaces failed during FTP transfer.
+
+(17-Mar-2015) 3.7.0
++ Option to use set_time_limit. Some host providers do not allow the change.
+~ Remove weblinks, since Joomla 3.4 does not support it.
+
+(26-Oct-2016) 3.7.1
+~ Hide duplicate alias option
+
+(31-Oct-2016) 3.7.2
+# tags could not be choosed.
+
+(19-Dec-2016) 3.7.3
+~ In case of error continue the process.
+# Trap all database errors.
+~ Limit error message in database transfer.
+
+(30-Dec-2016) 3.7.4
+# Failed to save featured articles after changes in previous release.
+
+(01-Feb-2017) 3.7.5
+~ Modified remote update to use SP Libraries v3.2.4
+
+(08-Feb-2017) 3.7.6
+# Problem with tags when source site is version 2.5
+~ Modified remote update to use SP Libraries v3.2.6
+~ Changed links to KAINOTOMO from http to https
+
+(27-Apr-2017) 3.8.0 
+~ Compatibility with Joomla! 3.7  
++ Disallow uninstallation of the non package extensions with tag blockChildUninstall
+~ Fix problems from JED Checker
+~ Changed JRequest::checkToken() to JSession::checkToken()
+~ Changed JRequest to JFactory::getApplication()->input->
+~ Changed JError to JFactory::getApplication()->enqueueMessage
+~ Renamed JFTP to PHFTP
+
+(20-May-2017) 3.8.1
+# Warning appears when calling modules transfer function.
+
+(02-Jun-2017) 3.8.2
+# Failing to transfer database tables with Joomla! 3.7.2
+
+(02-Jun-2017) 3.8.3
+# FTP fails when transferring folders.
+
+(02-Jun-2017) 3.8.4
+# Transfer new Joomla 3.7 fields
+~ Sidebar menu compatible with Joomla 3.7
+
+(12-Oct-2017) 3.8.5
+# Joomla 3.8.1 introduced problem when saving articles
+
+(23-Dec-2017) 4.0.0
+~ Joomla 4.0 compatibility
+
+(18-Jan-2018) 4.0.1
+# Included spcyend libraries for compatibility with Joomla v3
+
+(24-Jan-2018) 4.0.2
+# Fixed error after changing column order to ordering for Joomla v3
+
+(27-Jan-2018) 4.0.3
+# Views not loaded in Joomla v3.8
+
+(19-Jun-2018) 4.0.4
+# Error showing log during transfer. Renamed controller log to logs, and problem resolved.
+
+(23-Jun-2018) 4.0.5
+# Brought back model saving because some data do not transfer. 
+
+(25-Aug-2018) 4.0.6
+# Failing to save logs
++ Option to save object or not
+
+(02-Aug-2020) 5.0.0
+~ Compatibility with Joomla v4

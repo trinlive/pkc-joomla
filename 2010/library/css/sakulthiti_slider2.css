@@ -1,0 +1,15 @@
+.container { margin:0 auto; width:167px; height:98px; overflow:hidden; position:relative; cursor:pointer;}
+		div.slides { position:absolute; top:0px; left:0; }
+		ul.slides { position:absolute; top:0; left:0; list-style:none; padding:0; margin:0; }
+		div.slides .sl,ul.slides li { position:absolute; top:0; width:167px; padding:0; margin:0; }
+		/*
+		 * Optional
+		*/
+		#loopedSlider,#newsSlider { margin:0 auto; width:167px; position:relative; clear:both; }
+		ul.pagination { list-style:none; padding:0; margin:0; position:absolute; right:6px; z-index:20; top:-14px }
+		ul.pagination li  { float:left; font-family: "Arial"; margin-right:2px;}
+		ul.pagination li a { padding:1px 5px 1px; background:url(../slider/num_bg.gif) 0 0 no-repeat; font-size:11px; color:#FFFFFF; text-decoration:none; font-weight:bold; min-height:25px; display:block}
+		ul.pagination li a:hover { color:white; background:url(../slider/num_bg.gif) -17px 0 no-repeat;  }
+		ul.pagination li.active a { color:white; background:url(../slider/num_bg.gif) -17px 0 no-repeat;  }
+		a.previous {width:19px; height:33px; display:block; position:absolute; left:-25px; top:30px; text-indent:-9999px; outline:none;}
+		a.next {width:19px; height:33px; display:block; position:absolute; right:-26px; top:30px; text-indent:-9999px; outline:none;}

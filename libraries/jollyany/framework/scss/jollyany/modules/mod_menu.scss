@@ -1,0 +1,57 @@
+.sidebar {
+  .menu-module.nav {
+    li {
+      a {
+        display: block;
+        padding: 5px 0;
+      }
+    }
+    ul.nav-child {
+      list-style: none;
+      border-left: 1px dashed $border-color;
+      margin-left: 10px;
+      padding-left: 15px;
+      > li > a {
+        position: relative;
+        &:before {
+          content: "";
+          margin-right: 10px;
+          border-top: 1px dashed $border-color;
+          width: 7px;
+          height: 1px;
+          position: absolute;
+          top: 50%;
+          left: -13px;
+        }
+      }
+    }
+  }
+}
+
+.jollyany-dropdownmenu {
+  a {
+    color: inherit;
+  }
+  .dropdown-menu {
+    z-index: 1001;
+    li {
+      padding: 0.3rem 1rem;
+      display: block;
+    }
+  }
+}
+.jollyany-menu {
+  a {
+    color: inherit;
+  }
+  .navVerticalView li {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    &:first-child{
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

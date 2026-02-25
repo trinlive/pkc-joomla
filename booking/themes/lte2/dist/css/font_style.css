@@ -1,0 +1,35 @@
+@font-face {
+    font-family:"TH SarabunPSK";
+    src:url('print/THSarabun Bold Italic.ttf') format('truetype'),
+        url('print/THSarabun Bold.ttf') format('truetype'),
+        url('print/THSarabun Italic.ttf') format('truetype'),
+        url('print/THSarabun.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family:"TH SarabunPSK";
+    font-size: 18px;
+}
+.nnn{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.nn{
+    font-size:18px;
+    font-weight:bold;
+    float:left;
+}
+p{height: 1px;}
+table {border:none;font-size: 18px;}
+td{border:none; padding: 5px;}
+
+table.data {border: 1px solid #000000; margin: 10px 0px 20px 0px; width: 100%; border-collapse: collapse;font-size: 18px;}
+th.data {padding: 1px 1px 1px 1px;border: 1px solid #000000; }
+td.data {padding: 1px; border: 1px solid #000000;color: #000000;vertical-align: top;}
+tr.data {background: #fff}
+tr.data1 { background-color:#CCCCCC;}
+tr.data2 { background-color:#999999;}
+

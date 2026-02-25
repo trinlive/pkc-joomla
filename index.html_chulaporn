@@ -1,0 +1,29 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pakkret Municipality</title>
+<style type="text/css">
+<!--
+body {
+<!--    background-color: #CFB7EB;-->
+    background: #F8CE9C;
+background: linear-gradient(136deg, rgba(248, 206, 156, 1) 0%, rgba(236, 154, 80, 1) 50%, rgba(229, 115, 26, 1) 100%);
+}
+body,td,th {
+    color: #CFB7EB;
+}
+-->
+</style></head>
+
+<body>
+<div align="center">
+  <p><img src="img_chulabhorn68.png" alt="" width="1020" height="800" usemap="#Map" border="0"/>
+    <map name="Map">
+      <area shape="rect" coords="666,747,822,786" href="https://pakkretcity.go.th/index.php" target="_blank">
+    </map>
+  </p>
+  <p><br>
+  </p>
+</div>
+<p>&nbsp;</p>
+</body>
+</html>

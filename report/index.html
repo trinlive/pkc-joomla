@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บันทึกภาพการใช้ถังหมักปุ๋ย - เทศบาลนครปากเกร็ด</title>
+    <link href="https://cdn.jsdelivr.net/gh/lazywasabi/thai-web-fonts@7/fonts/LINESeedSansTH/LINESeedSansTH.css"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'LINE Seed Sans TH', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            background: white;
+            border-radius: 50%;
+            padding: 8px;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        .form-content {
+            padding: 30px 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .form-desc {
+            display: block;
+            font-size: 13px;
+            color: #718096;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .form-select,
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'LINE Seed Sans TH', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .form-select:focus,
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .file-upload-wrapper {
+            position: relative;
+            border: 2px dashed #cbd5e0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            background: #f7fafc;
+        }
+
+        .file-upload-wrapper:hover {
+            border-color: #667eea;
+            background: #edf2f7;
+        }
+
+        .file-upload-wrapper input[type="file"] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-upload-label {
+            display: block;
+            color: #4a5568;
+            font-size: 14px;
+        }
+
+        .file-upload-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .file-preview {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .preview-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'LINE Seed Sans TH', sans-serif;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        .success-message,
+        .error-message {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                border-radius: 0;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .form-content {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://pakkretcity.go.th/image/logo-pakkretcity.png" alt="เทศบาลนครปากเกร็ด" class="logo">
+            <h1>บันทึกภาพการใช้ถังหมักปุ๋ย</h1>
+            <p>โครงการเศษอาหารสร้างดินดี ระยะที่ 1<br>ของเทศบาลนครปากเกร็ด</p>
+        </div>
+
+        <div class="form-content">
+            <div id="successMessage" class="success-message"></div>
+            <div id="errorMessage" class="error-message"></div>
+
+            <form id="uploadForm" enctype="multipart/form-data">
+                <!-- เลือกชุมชน -->
+                <div class="form-group">
+                    <label class="form-label">ชื่อชุมชน *</label>
+                    <input type="text" class="form-select" id="community" name="community" list="communityList"
+                        placeholder="พิมพ์เพื่อค้นหาหรือเลือกชุมชน" required autocomplete="off">
+                    <datalist id="communityList"></datalist>
+                </div>
+
+                <!-- ภาพที่ 1 -->
+                <div class="form-group">
+                    <label class="form-label">1. ภาพการเติมเศษอาหาร *</label>
+                    <span class="form-desc">ภาพขณะนำเศษอาหารที่คัดแยกแล้วใส่ลงในถัง</span>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="foodImages" name="foodImages[]" accept="image/*" multiple required
+                            onchange="previewImages(this, 'foodPreview')">
+                        <label class="file-upload-label">
+                            <div class="file-upload-icon">📸</div>
+                            <div>คลิกหรือแตะเพื่ออัพโหลดรูปภาพ<br><small>(เลือกได้หลายรูป)</small></div>
+                        </label>
+                    </div>
+                    <div id="foodPreview" class="file-preview"></div>
+                </div>
+
+                <!-- ภาพที่ 2 -->
+                <div class="form-group">
+                    <label class="form-label">2. ภาพการเติมของแห้ง *</label>
+                    <span class="form-desc">ภาพขณะเติมวัสดุแห้ง (ขี้เลื่อย/ขุยมะพร้าว) เพื่อปรับความชื้น</span>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="dryImages" name="dryImages[]" accept="image/*" multiple required
+                            onchange="previewImages(this, 'dryPreview')">
+                        <label class="file-upload-label">
+                            <div class="file-upload-icon">📸</div>
+                            <div>คลิกหรือแตะเพื่ออัพโหลดรูปภาพ<br><small>(เลือกได้หลายรูป)</small></div>
+                        </label>
+                    </div>
+                    <div id="dryPreview" class="file-preview"></div>
+                </div>
+
+                <!-- ภาพที่ 3 -->
+                <div class="form-group">
+                    <label class="form-label">3. ภาพการหมุนถัง *</label>
+                    <span class="form-desc">ภาพขณะหมุนถังปุ๋ยเพื่อเติมอากาศ</span>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="rotateImages" name="rotateImages[]" accept="image/*" multiple required
+                            onchange="previewImages(this, 'rotatePreview')">
+                        <label class="file-upload-label">
+                            <div class="file-upload-icon">📸</div>
+                            <div>คลิกหรือแตะเพื่ออัพโหลดรูปภาพ<br><small>(เลือกได้หลายรูป)</small></div>
+                        </label>
+                    </div>
+                    <div id="rotatePreview" class="file-preview"></div>
+                </div>
+
+                <!-- ภาพที่ 4 -->
+                <div class="form-group">
+                    <label class="form-label">4. ภาพผลลัพธ์ *</label>
+                    <span class="form-desc">ภาพที่แสดงว่าได้ปุ๋ยที่หมักจากเศษอาหารแล้ว</span>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="resultImages" name="resultImages[]" accept="image/*" multiple required
+                            onchange="previewImages(this, 'resultPreview')">
+                        <label class="file-upload-label">
+                            <div class="file-upload-icon">📸</div>
+                            <div>คลิกหรือแตะเพื่ออัพโหลดรูปภาพ<br><small>(เลือกได้หลายรูป)</small></div>
+                        </label>
+                    </div>
+                    <div id="resultPreview" class="file-preview"></div>
+                </div>
+
+                <!-- ปริมาณเศษอาหาร -->
+                <div class="form-group">
+                    <label class="form-label">ปริมาณเศษอาหาร (กิโลกรัม) *</label>
+                    <input type="number" class="form-input" id="amount" name="amount"
+                        placeholder="ระบุปริมาณโดยประมาณ (เช่น 2.5)" step="0.1" min="0" required>
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p style="margin-top: 10px; color: #667eea;">กำลังอัพโหลด กรุณารอสักครู่...</p>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    ส่งข้อมูล
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // รายชื่อชุมชน
+        const communities = [
+            'ปากเกร็ดร่วมใจ 1', 'ปากเกร็ดร่วมใจ 2', 'ปากเกร็ดร่วมใจ 3', 'ปากเกร็ดร่วมใจ 4',
+            'ปากเกร็ดร่วมใจ 5', 'ปากเกร็ดร่วมใจ 6', 'ปากเกร็ดร่วมใจ 7', 'ปากเกร็ดร่วมใจ 8',
+            'ปากเกร็ดร่วมใจ 9', 'ปากเกร็ดร่วมใจ 10', 'สายลม', 'การเคหะ', 'สรานนท์',
+            'บางตลาดพัฒนา 1', 'บางตลาดพัฒนา 2', 'บางตลาดพัฒนา 3', 'บางตลาดพัฒนา 4',
+            'บางตลาดพัฒนา 5', 'บางตลาดพัฒนา 6', 'บางตลาดพัฒนา 7', 'บางตลาดพัฒนา 8',
+            'บางตลาดพัฒนา 9', 'บางตลาดพัฒนา 10', 'บางตลาดพัฒนา 11', 'พบสุข',
+            'สวัสดิการ กทม.', 'ประชาชื่น', 'ประชานิเวศน์ 2 ระยะ 3', 'กฤษดานคร',
+            'พงษ์ธรรมนิเวศน์', 'สีไชยทอง', 'บางพูดสามัคคี 1', 'บางพูดสามัคคี 2',
+            'บางพูดสามัคคี 3', 'บางพูดสามัคคี 4', 'บางพูดสามัคคี 5', 'บางพูดสามัคคี 6',
+            'บางพูดสามัคคี 7', 'บางพูดสามัคคี 8', 'บางพูดสามัคคี 9', 'บางพูดสามัคคี 10',
+            'บางพูดสามัคคี 11', 'บางพูดสามัคคี 12', 'เสริมสุข', 'ลานทอง',
+            'ปากเกร็ดวิลเล็จ', 'ไทยสมุตร', 'สหกรณ์ 3', 'ราชพฤกษ์', 'วัดกู้ - มติชน',
+            'บ้านใหม่สมานฉันท์ 1', 'บ้านใหม่สมานฉันท์ 2', 'บ้านใหม่สมานฉันท์ 3',
+            'บ้านใหม่สมานฉันท์ 4', 'บ้านใหม่สมานฉันท์ 5', 'บ้านใหม่สมานฉันท์ 6',
+            'บ้านใหม่สมานฉันท์ 7', 'บ้านใหม่สมานฉันท์ 8', 'มิตรประชา', 'ดวงแก้ว',
+            'ขส.ทบ.', 'คลองเกลือเอื้ออารี 1', 'คลองเกลือเอื้ออารี 2', 'คลองเกลือเอื้ออารี 3',
+            'คลองเกลือเอื้ออารี 4', 'คลองเกลือเอื้ออารี 5'
+        ];
+
+        // สร้าง datalist
+        const datalist = document.getElementById('communityList');
+        communities.forEach(community => {
+            const option = document.createElement('option');
+            option.value = community;
+            datalist.appendChild(option);
+        });
+
+        // Preview images
+        function previewImages(input, previewId) {
+            const preview = document.getElementById(previewId);
+            preview.innerHTML = '';
+
+            if (input.files) {
+                Array.from(input.files).forEach(file => {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.className = 'preview-image';
+                        preview.appendChild(img);
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('uploadForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+
+            // Show loading
+            submitBtn.style.display = 'none';
+            loading.style.display = 'block';
+
+            try {
+                const response = await fetch('upload.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showMessage('success', result.message);
+                    this.reset();
+                    // Clear all previews
+                    document.querySelectorAll('.file-preview').forEach(preview => {
+                        preview.innerHTML = '';
+                    });
+                } else {
+                    showMessage('error', result.message);
+                }
+            } catch (error) {
+                showMessage('error', 'เกิดข้อผิดพลาด: ' + error.message);
+            } finally {
+                submitBtn.style.display = 'block';
+                loading.style.display = 'none';
+            }
+        });
+
+        function showMessage(type, message) {
+            const msgElement = document.getElementById(type + 'Message');
+            msgElement.textContent = message;
+            msgElement.style.display = 'block';
+
+            setTimeout(() => {
+                msgElement.style.display = 'none';
+            }, 5000);
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

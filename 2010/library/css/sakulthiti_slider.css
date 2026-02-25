@@ -1,0 +1,15 @@
+.container { margin:0 auto; width:443px; height:140px; overflow:hidden; position:relative; cursor:pointer; }
+		div.slides { position:absolute; top:13px; left:0; }
+		ul.slides { position:absolute; top:0; left:0; list-style:none; padding:0; margin:0; }
+		div.slides .sl,ul.slides li { position:absolute; top:0; width:463px; padding:0; margin:0; }
+		/*
+		 * Optional
+		*/
+		#loopedSlider,#newsSlider { margin:0 auto; width:463px; position:relative; clear:both; }
+		ul.pagination { list-style:none; padding:0; margin:0; position:absolute; right:6px; z-index:20; top:-14px }
+		ul.pagination li  { float:left; font-family: "Arial"; margin-right:2px;}
+		ul.pagination li a { padding:1px 5px 1px; background:url(../slider/num_bg.gif) -17px 0 no-repeat; font-size:11px; color:#FFFFFF; text-decoration:none; font-weight:bold; min-height:25px; display:block}
+		ul.pagination li a:hover { color:white; background:url(../slider/num_bg.gif) 0 0 no-repeat;  }
+		ul.pagination li.active a { color:white; background:url(../slider/num_bg.gif) 0 0 no-repeat;  }
+		a.previous { background:url(../slider/button_previous.gif) 0 0 no-repeat; width:19px; height:33px; display:block; position:absolute; left:-19px; top:40px; text-indent:-9999px; outline:none;}
+		a.next { background:url(../slider/button_next.gif) 0 0 no-repeat; width:19px; height:33px; display:block; position:absolute; right:-21px; top:40px; text-indent:-9999px; outline:none;}

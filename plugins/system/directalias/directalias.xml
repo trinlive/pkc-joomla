@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.3" type="plugin" group="system" method="upgrade">
+	<name>plg_system_directalias</name>
+	<description>PLG_SYSTEM_DIRECTALIAS_XML_DESCRIPTION</description>
+
+	<author>AlterBrains</author>
+	<copyright>(C) 2013-2023 AlterBrains. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>alterbrains@gmail.com</authorEmail>
+	<authorUrl>https://alterbrains.com</authorUrl>
+
+	<creationDate>12/27/2023</creationDate>
+	<version>3.1.3</version>
+
+	<namespace path="src">AlterBrains\Plugin\System\Directalias</namespace>
+
+	<files>
+		<folder plugin="directalias">services</folder>
+		<folder>src</folder>
+		<folder>language</folder>
+	</files>
+
+	<scriptfile>directalias.script.php</scriptfile>
+
+	<updateservers>
+		<server type="collection" priority="1" name="AlterBrains Updates">https://alterbrains.com/update.xml</server>
+	</updateservers>
+
+	<config>
+		<inlinehelp button="show"/>
+
+		<fields name="params">
+			<fieldset name="basic">
+
+				<field name="shorten_all" type="radio" filter="integer" default="0"
+					   layout="joomla.form.field.radio.switcher"
+					   label="PLG_SYSTEM_DIRECT_ALIAS_SHORTEN_ALL" description="PLG_SYSTEM_DIRECT_ALIAS_SHORTEN_ALL_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

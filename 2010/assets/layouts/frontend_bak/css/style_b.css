@@ -1,0 +1,183 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+ul.package_list{
+	padding:0;
+	margin:5px 0 0 0;
+	list-style:none;
+	height:150px;
+	position:relative;
+}
+ul.package_list li{
+	float:left;
+	margin:0 10px 0 0;
+	cursor:pointer;
+}
+ul.package_list li.last{
+	margin:0;
+}
+ul.package_list li div.detail_hover{
+	display:none;
+}
+ul.package_list li:hover div.detail_hover{
+	display:block;
+	position:absolute;
+	background-color:#F58025;
+	width:990px;
+	cursor:default;
+	margin:10px 0 0 0;
+	left:0;
+}
+ul.package_list li:hover div.detail_hover .arrow-up {
+	width: 0; 
+	height: 0; 
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 15px solid #F58025;
+	margin:-15px 0 0 0;
+}
+ul.package_list li:hover div.detail_hover .arrow1{margin-left:100px;}
+ul.package_list li:hover div.detail_hover .arrow2{margin-left:350px;}
+ul.package_list li:hover div.detail_hover .arrow3{margin-left:600px;}
+ul.package_list li:hover div.detail_hover .arrow4{margin-left:800px;}
+ul.package_list li:hover div.detail_hover ul.package_list_hover{
+	margin:20px 10px;
+	padding:0;
+	list-style:none;
+	overflow:hidden;
+}
+ul.package_list li:hover div.detail_hover ul.package_list_hover li{
+	float:left;
+	width:230px;
+	margin:0 0 0 10px;
+}
+ul.package_list li:hover div.detail_hover ul.package_list_hover li img{
+	margin-right:10px;
+}
+ul.package_list li:hover div.detail_hover ul.package_list_hover li .detail{
+	width:115px;
+	float:left;
+	font-size:11px;
+	color:#fff;
+	font-weight:700;
+	text-align:left;
+}
+ul.hilight_list{
+	padding:0;
+	margin:0 0 0 7px;
+	list-style:none;
+	overflow:hidden;
+}
+ul.hilight_list li{
+	float:left;
+	margin:15px 6px;
+	width:220px;
+	font-family: 'true_boldregular';
+	height:83px;
+	line-height:83px;
+	font-size:20px;
+	color:#969696;
+	overflow:hidden;
+}
+ul.hilight_list li img{
+	float:left;
+	margin:0;
+}
+ul.hilight_list li span.iphone{ padding-left:0px;}
+ul.hilight_list li span.ipad{ padding-left:10px;}
+ul.hilight_list li span.samsung{ padding-left:12px;}
+ul.hilight_list li span.golive{ margin-left:-10px;}
+ul.hilight_list li.arrow{
+	width:12px;
+	height:24px;
+	margin:40px 0 0 0;
+	padding:0 10px 0 0;
+	overflow:hidden;
+}
+ul.product_list{
+	padding:10px 0 20px 0;
+	margin:0 0 5px 0;
+	list-style:none;
+	overflow:hidden;
+}
+ul.product_list li{
+	float:left;
+	margin:0;
+	padding:0 10px;
+	width:225px;
+	text-align:center;
+	line-height:24px;
+	color:#969696;
+}
+ul.product_list li img{
+	margin-bottom:15px;
+}
+ul.product_list li span.product_title{
+	font-family: 'true_mediumregular';
+	font-size:14px;
+	color:#6C798C;
+}
+ul.product_list li a.btn_green{
+	background:url(../images/truemoveh/bttn_bg_green.png) no-repeat;
+	width:80px;
+	height:20px;
+	text-align:center;
+	display:block;
+	float:left;
+	color:#fff;
+	font-size:11px;
+	line-height:20px;
+	margin:10px 0 0 25px;
+}
+
+ul.product_list li a.btn_white{
+	border:1px solid #CCCCCC;
+	width:78px;
+	height:18px;
+	text-align:center;
+	display:block;
+	float:right;
+	color:#6C798C;
+	font-size:11px;
+	line-height:18px;
+	margin:10px 25px 0 0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+ul.news_list{
+	padding:0;
+	margin:15px 0 0 0;
+	list-style:none;
+	overflow:hidden;
+	height:145px;
+}
+ul.news_list li{
+	float:left;
+	margin:0 20px;
+	width:205px;
+}
+ul.news_list li.last{
+	margin:0;
+}
+
+
+/*DETAIL LIST PK*/
+
+#thumbpk .detail_list{width:100%; height:auto; }
+#thumbpk .detail_list ul{margin:0; padding:0; list-style:none; }
+#thumbpk .detail_list ul li{display:block; float:left; width:148px; height:auto; padding:0 75px 20px 0; }
+#thumbpk .detail_list ul.full li{display:block; float:left; width:148px; height:auto; padding:0 55px 20px 0; }
+#thumbpk .detail_list ul li.last{width:128px; height:auto; padding:0; }
+#thumbpk .detail_list ul.full li.last{width:128px; height:auto; padding:0; }
+#thumbpk .detail_list ul li .thumb{width:128px; height:128px; }
+#thumbpk .detail_list ul li .thumb2{width:128px; height:92px; }
+#thumbpk .detail_list ul li .title{width:128px; height:26px; overflow:hidden; color:#6C798C; font-size:12px; padding:5px 0 0 0; word-wrap:break-word; }
+#thumbpk .detail_list ul li .title a{color:#6C798C;  }
+#thumbpk .detail_list ul li .title a:hover, .detail_list ul li .title a.active{color:#000;  }
+
+
+.headlineb {width:100%; height:60px;line-height:60px;font-family: 'true_lightregular'; text-align:left;color:#01AFEF; font-size:26px;}
+
+/*END DETAIL LIST PK*/

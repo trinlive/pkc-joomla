@@ -1,0 +1,17 @@
+body {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-size: 18px;
+  font-family: 'Conv_THSarabun';
+  background-image:url(../images/bg_webbody.png);
+  background-repeat : no-repeat;
+  background-position : center top;
+  background-attachment:fixed;
+}
+
+.navbar {
+  margin-bottom: 0px;
+    font:18px ;
+    font-family:'Conv_THSarabun';
+}
+

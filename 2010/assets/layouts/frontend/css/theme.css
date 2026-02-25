@@ -1,0 +1,29 @@
+body {
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+}
+html, body, td, div, input, select, textarea {
+    font:18px ;
+    font-family:'Conv_THSarabun';
+    color:#40454f;
+
+}
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+}

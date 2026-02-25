@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+.form-control::-moz-placeholder {
+    color: #cccccc;
+    font-style: italic;
+    opacity: 1;
+}

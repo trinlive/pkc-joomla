@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.login_wrapper{width:380px; height:380px; background:#F1F2F4; border-radius:10px; -webkit-border-radius:10px; -moz-border-radius:10px; padding:20px; position:relative; z-index:1;}
+.login_wrapper .title{color:#1CD1C6; font-family: Arial, Tahoma;  font-size:28px; text-align:center; height:auto; width:400px; }
+.login_wrapper .login_field{background:url(../images/login_field.png) no-repeat; width:280px; height:86px; margin:10px auto; padding:3px 10px ;}
+.login_wrapper .login_field .field{width:280px;height:30px; border:none; background:none; color:#666;margin:5px 0 8px 0; margin:7px 0 6px 0\0/;!margin:7px 0 6px 0;_margin:7px 0 6px 0;}
+.login_wrapper .rememberpass{width:200px; height:20px; margin:0 auto; padding:10px 0; color:#666; text-align:center;}
+.login_wrapper .forgetpass {color:#4D586B; font-size:14px; height:20px; line-height:20px; margin:0 auto; width:150px; text-align:center;}
+.login_wrapper .forgetpass a{color:#4D586B;}
+.login_wrapper .forgetpass a.active, .login_wrapper .forgetpass a:hover{color:#000; }
+
+
+.login_wrapper .button{width:250px; height:40px; line-height:40px; text-align:center; font-size:18px; color:#fff; margin:10px auto; display:block; border-radius:6px; -webkit-border-radius:6px; -moz-border-radius:6px;}
+.login_wrapper .button:hover{color:#000;}
+
+.login_wrapper .button.btngrey{color:#6C798C;}
+.login_wrapper .button.btngrey:hover{color:#000;}
+
+.login_wrapper .close{
+	position: absolute;
+	z-index: 2;
+	width: 55px;
+	height: 55px;
+	display: block;
+	left: 389px;
+	top: -20px;
+}
+/*button*/
+
+.btngreen{background: #5AE4DE; /* Old browsers */
+
+background: -moz-linear-gradient(top,  #5AE4DE 42%, ##5AE4DE 99%); /* FF3.6+ */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(42%,#5AE4DE), color-stop(99%,##5AE4DE)); /* Chrome,Safari4+ */
+
+background: -webkit-linear-gradient(top,  #5AE4DE 42%,##5AE4DE 99%); /* Chrome10+,Safari5.1+ */
+
+background: -o-linear-gradient(top,  #5AE4DE 42%,##5AE4DE 99%); /* Opera 11.10+ */
+
+background: -ms-linear-gradient(top,  #5AE4DE 42%,##5AE4DE 99%); /* IE10+ */
+
+background: linear-gradient(to bottom,  #5AE4DE 42%,##5AE4DE 99%); /* W3C */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5AE4DE', endColorstr='##5AE4DE',GradientType=0 ); /* IE6-9 */
+border:1px #5AE4DE solid;
+}
+
+.btngrey{background: #ffffff; /* Old browsers */
+
+background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+
+background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+
+background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+
+background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+
+background: linear-gradient(to bottom,  #ffffff 0%,#e5e5e5 100%); /* W3C */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+border:1px #CED0D1 solid;
+}
+
+.btngrey2{background: #b5bdc8; /* Old browsers */
+background: -moz-linear-gradient(top, #b5bdc8 0%, #828c95 36%, #2a3338 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b5bdc8), color-stop(36%,#828c95), color-stop(100%,#2a3338)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #b5bdc8 0%,#828c95 36%,#2a3338 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #b5bdc8 0%,#828c95 36%,#2a3338 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #b5bdc8 0%,#828c95 36%,#2a3338 100%); /* IE10+ */
+background: linear-gradient(to bottom, #b5bdc8 0%,#828c95 36%,#2a3338 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#2a3338',GradientType=0 ); /* IE6-9 */
+border:1px #6C798C solid;
+color:#6C798C;
+}

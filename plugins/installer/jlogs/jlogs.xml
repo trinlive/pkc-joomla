@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="installer" method="upgrade">
+	<name>PLG_INSTALLER_JLOGS</name>
+	<author>Web357 (Yiannis Christodoulou)</author>
+	<creationDate>2024-11-21</creationDate>
+	<copyright>Copyright: (©) 2014-2024 Web357. All rights reserved.</copyright>
+	<license>GNU/GPLv3, https://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>support@web357.com</authorEmail>
+	<authorUrl>https://www.web357.com</authorUrl>
+	<version>1.0.6</version>
+	<variant>free</variant>
+	<description>The JLogs is a Joomla! Component that displays the contents of Joomla! log files for debugging purposes.</description>
+	
+	<files>
+		<folder>language</folder>
+		<filename plugin="jlogs">jlogs.php</filename>
+		<filename>script.install.helper.php</filename>
+	</files>
+	
+	<scriptfile>script.install.php</scriptfile>
+
+	<updateservers><server type="extension" priority="1" name="JLogs   (free version)"><![CDATA[https://updates.web357.com/jlogs/jlogs_free.xml]]></server></updateservers>
+
+</extension>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="Joomla\Component\Sptransfer\Administrator\Field">
+    <fields name="filter">
+        
+        <field
+            name="search"
+            type="text"
+            hint="JSEARCH_FILTER"
+            description="COM_SPTRANSFER_SEARCH_BY_ID"
+        />
+        
+        <field 
+            name="tables_id"
+            type="tables"
+            onchange="this.form.submit();">
+            default=""
+            <option value="">COM_SPTRANSFER_SELECT_TABLES_ID</option>
+        </field>
+        
+        <field
+            name="state"
+            type="list"
+            onchange="this.form.submit();"
+            default="1"
+        >
+            <option value="1">COM_SPTRANSFER_STATE_1</option>
+            <option value="2">COM_SPTRANSFER_STATE_2</option>
+            <option value="3">COM_SPTRANSFER_STATE_3</option>
+            <option value="4">COM_SPTRANSFER_STATE_4</option>
+            <option value="0">COM_SPTRANSFER_STATE_0</option>
+        </field>
+        
+    </fields>
+
+    <fields name="list">
+        
+        <field
+            name="limit"
+            type="limitbox"
+            label="JGLOBAL_LIST_LIMIT"
+            default="25"
+            onchange="this.form.submit();"
+        />
+        
+        <field
+            name="fullordering"
+            type="list"
+            label="JGLOBAL_SORT_BY"
+            onchange="this.form.submit();"
+            default="a.created DESC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="a.tables_id ASC">COM_SPTRANSFER_EXTENSION_ID_ASC</option>
+            <option value="a.tables_id DESC">COM_SPTRANSFER_EXTENSION_ID_DESC</option>	
+            <option value="a.source_id ASC">COM_SPTRANSFER_SOURCE_ID_ASC</option>
+            <option value="a.source_id DESC">COM_SPTRANSFER_SOURCE_ID_DESC</option>
+            <option value="a.state ASC">COM_SPTRANSFER_STATE_ASC</option>
+            <option value="a.state DESC">COM_SPTRANSFER_STATE_DESC</option>
+            <option value="a.created ASC">JDATE_ASC</option>
+            <option value="a.created DESC">JDATE_DESC</option>
+        </field>
+
+    </fields>
+</form>

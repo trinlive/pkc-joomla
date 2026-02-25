@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.5"
+	client="site"
+	method="upgrade">
+	<name>EXT Owl Сarousel Images</name>
+	<author>Eco-Joom.com</author>
+	<creationDate>05/05/2020</creationDate>
+	<copyright>Copyright (C) 2011-2020 Eco-Joom.com. All Rights Reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>v.v.makeev@icloud.com</authorEmail>
+	<authoralt>http://eco-joom.com/</authoralt>
+	<version>2.1</version>
+	<description>EXT Owl Сarousel Images (jQuery)</description>
+	<files>	
+		<filename module="mod_ext_owl_carousel_images">mod_ext_owl_carousel_images.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_ext_owl_carousel_images.php</filename>
+		<filename>mod_ext_owl_carousel_images.xml</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>    
+    </files>
+	
+	<languages>	
+		<language tag="en-GB">en-GB.mod_ext_owl_carousel_images.ini</language>
+		<language tag="en-GB">en-GB.mod_ext_owl_carousel_images.sys.ini</language>
+		<language tag="ru-RU">ru-RU.mod_ext_owl_carousel_images.ini</language>
+		<language tag="ru-RU">ru-RU.mod_ext_owl_carousel_images.sys.ini</language>	
+	</languages>
+		
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+
+							
+				<field
+					name="ext_load_jquery"
+					type="radio"
+					default="1"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_LOAD_JQ_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_LOAD_JQ_DESC" >
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				
+				<field
+					name="ext_jquery_ver"
+					type="text"
+					default="1.10.2"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_JQUERYVER_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_JQUERYVER_DESC" />
+
+				<field
+					name="ext_load_base"
+					type="radio"
+					default="1"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_LOAD_BASE_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_LOAD_BASE_DESC" >
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>		
+		
+				
+				<field 
+					name="ext_width_block" 
+					type="text" 
+					default="600"
+					filter="int"					
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_WIDTH_BLOCK_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_WIDTH_BLOCK_DESC"/>
+					
+				
+				<field 
+					name="ext_items" 
+					type="text" 
+					default="1" 
+					filter="int"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ITEMS_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ITEMS_DESC"/>
+				
+				<field
+					name="ext_navigation"
+					type="radio"
+					default="true"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_NAVIGATION_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_NAVIGATION_DESC" >
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				<field
+					name="ext_pagination"
+					type="radio"
+					default="true"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_PAGINATION_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_PAGINATION_DESC" >
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				<field
+					name="ext_paginationnumbers"
+					type="radio"
+					default="false"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_PAGINATIONNUMBERS_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_PAGINATIONNUMBERS_DESC" >
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+			
+			</fieldset>
+			
+			<fieldset name="OPTIONS_OWL">
+				<field type="spacer" label="OPTIONS_OWL_PRO_SPACER" />
+				<field type="spacer" label="OPTIONS_OWL_PRO_INFO_SPACER" />
+				
+				<field 
+					name="ext_itemsdesktop" 
+					type="text"
+					default="false"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ITEMSDESKTOP_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ITEMSDESKTOP_DESC"/>
+				<field 
+					name="ext_itemsdesktopsmall" 
+					type="text"
+					default="false"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ITEMSDESKTOPSMALL_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ITEMSDESKTOP_DESC"/>
+				<field 
+					name="ext_itemstablet" 
+					type="text"
+					default="[768,2]"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ITEMSTABLET_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ITEMSDESKTOP_DESC"/>
+				<field 
+					name="ext_itemstabletsmall" 
+					type="text"
+					default="false"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ITEMSTABLETSMALL_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ITEMSDESKTOP_DESC"/>
+				<field 
+					name="ext_itemsmobile" 
+					type="text"
+					default="[479,1]"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ITEMSMOBILE_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ITEMSDESKTOP_DESC"/>
+				
+				<field 
+					name="ext_itemscustom" 
+					type="textarea"
+					default="false"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ITEMSCUSTOM_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ITEMSCUSTOM_DESC"/>	
+				
+				
+				<field
+					name="ext_autoplay"
+					type="text" 
+					default="false"					
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_AUTOPLAY_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_AUTOPLAY_DESC" />
+				
+				<field
+					name="ext_stoponhover"
+					type="radio"
+					default="false"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_STOPONHOVER_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_STOPONHOVER_DESC" >
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				
+				
+				<field 
+					name="ext_slidespeed" 
+					type="text" 
+					default="200"
+					filter="int"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_SLIDESPEED_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_SLIDESPEED_DESC"/>
+				<field 
+					name="ext_paginationspeed" 
+					type="text" 
+					default="800"
+					filter="int"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_PAGINATIONSPEED_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_PAGINATIONSPEED_DESC"/>	
+				<field 
+					name="ext_rewindspeed" 
+					type="text" 
+					default="1000"
+					filter="int"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_REWINDSPEED_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_REWINDSPEED_DESC"/>	
+				<field 
+					name="ext_navigationtext_prev" 
+					type="text" 
+					default="prev"
+					filter="raw"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_NAVIGATIONTEXT_PREV_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_NAVIGATIONTEXT_PREV_DESC"/>	
+				
+				<field 
+					name="ext_navigationtext_next" 
+					type="text" 
+					default="next"
+					filter="raw"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_NAVIGATIONTEXT_NEXT_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_NAVIGATIONTEXT_NEXT_DESC"/>			
+				
+
+				<field
+					name="ext_rewindnav"
+					type="radio"
+					default="true"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_REWINDNAV_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_REWINDNAV_DESC" >
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				<field
+					name="ext_scrollperpage"
+					type="radio"
+					default="false"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_SCROLLPERPAGE_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_SCROLLPERPAGE_DESC" >
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				<field
+					name="ext_responsive"
+					type="radio"
+					default="true"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_RESPONSIVE_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_RESPONSIVE_DESC" >
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				
+				<field 
+					name="ext_responsiverefreshrate" 
+					type="text" 
+					default="200"
+					filter="int"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_RESPONSIVEREFRESHRATE_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_RESPONSIVEREFRESHRATE_DESC"/>	
+				<field 
+					name="ext_responsivebasewidth" 
+					type="text" 
+					default="window"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_RESPONSIVEBASEWIDTH_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_RESPONSIVEBASEWIDTH_DESC"/>	
+				<field 
+					name="ext_baseclass" 
+					type="text" 
+					default="owl-carousel"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_BASECLASS_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_BASECLASS_DESC" />	
+				<field 
+					name="ext_theme" 
+					type="text" 
+					default="owl-carousel"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_THEME_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_THEME_DESC" />		
+				
+				<field
+					name="ext_lazyload"
+					type="radio"
+					default="false"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_LAZYLOAD_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_LAZYLOAD_DESC" >
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				<field
+					name="ext_lazyfollow"
+					type="radio"
+					default="true"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_LAZYFOLLOW_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_LAZYFOLLOW_DESC" >
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				
+				<field 
+					name="ext_lazyeffect" 
+					type="text" 
+					default="owl-carousel"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_LAZYEFFECT_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_LAZYEFFECT_DESC" />	
+				
+				
+				<field
+					name="ext_autoheight"
+					type="radio"
+					default="false"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_AUTOHEIGHT_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_AUTOHEIGHT_DESC" >
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				
+				<field
+					name="ext_dragbeforeanimfinish"
+					type="radio"
+					default="true"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_DRAGBEFOREANIMFINISH_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_DRAGBEFOREANIMFINISH_DESC" >
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				<field
+					name="ext_mousedrag"
+					type="radio"
+					default="true"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_MOUSEDRAG_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_MOUSEDRAG_DESC" >
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				<field
+					name="ext_touchdrag"
+					type="radio"
+					default="true"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_TOUCHDRAG_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_TOUCHDRAG_DESC" >
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				<field
+					name="ext_addclassactive"
+					type="radio"
+					default="false"
+					class="btn-group"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ADDCLASSACTIVE_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_ADDCLASSACTIVE_DESC" >
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				
+				
+				<field 
+					name="ext_transitionstyle" 
+					type="list"
+					default="false"					
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_TRANSITIONSTYLE_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_TRANSITIONSTYLE_DESC" >
+					<option value="false">false</option>
+					<option value="fade">fade</option>
+					<option value="backSlide">backSlide</option>
+					<option value="goDown">goDown</option>
+					<option value="fadeUp">fadeUp</option>
+				</field>	
+				
+				<field 
+					name="ext_beforeupdate" 
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="false"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_BEFOREUPDATE_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_BEFOREUPDATE_DESC" />	
+				
+				
+				<field 
+					name="ext_afterupdate" 
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="false"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_AFTERUPDATE_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_AFTERUPDATE_DESC" />
+				
+				<field 
+					name="ext_beforeinit" 
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="false"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_BEFOREINIT_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_BEFOREINIT_DESC" />
+				
+				<field 
+					name="ext_afterinit" 
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="false"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_AFTERINIT_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_AFTERINIT_DESC" />
+				<field 
+					name="ext_beforemove" 
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="false"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_BEFOREMOVE_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_BEFOREMOVE_DESC" />
+				<field 
+					name="ext_aftermove" 
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="false"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_AFTERMOVE_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_AFTERMOVE_DESC" />
+				
+				<field 
+					name="ext_afteraction" 
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="false"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_AFTERACTION_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_AFTERACTION_DESC" />
+				
+				<field 
+					name="ext_startdragging" 
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="false"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_STARTDRAGGING_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_STARTDRAGGING_DESC" />
+				
+				<field 
+					name="ext_afterlazyload" 
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="false"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_AFTERLAZYLOAD_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_EXT_AFTERLAZYLOAD_DESC" />
+				
+				
+				
+				
+			</fieldset>	
+			
+			<fieldset name="IMG">
+		
+				<field type="spacer" label="IMAGE_SPACER1" />
+				<field 
+					name="img1"					
+					default="" 
+					type="media"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_DESC" />
+					
+							
+				
+				
+				<field 
+					name="alt1"
+					type="textarea"
+					rows="2" 
+					cols="40"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_DESC"/>
+				
+				<field 
+					name="url1" 
+					type="textarea"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_DESC"/>	
+				<field
+					name="target1"
+					type="list"
+					default="_self"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_DESC">
+					<option	value="_blank">_blank</option>
+					<option	value="_self">_self</option>
+					<option	value="_parent">_parent</option>
+					<option	value="_top">_top</option>
+				</field>								
+				
+				<field 
+					name="html1"
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_DESC"/>
+				
+			
+			<field type="spacer" label="IMAGE_SPACER2" />
+				<field 
+					name="img2"					
+					default="" 
+					type="media"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_DESC" />
+				
+				
+				<field 
+					name="alt2" 
+					type="textarea"
+					rows="2" 
+					cols="40" 
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_DESC"/>
+				
+				<field 
+					name="url2" 
+					type="textarea"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_DESC"/>	
+				<field
+					name="target2"
+					type="list"
+					default="_self"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_DESC">
+					<option	value="_blank">_blank</option>
+					<option	value="_self">_self</option>
+					<option	value="_parent">_parent</option>
+					<option	value="_top">_top</option>
+				</field>
+				
+				<field 
+					name="html2"
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_DESC"/>
+			
+
+			
+			<field type="spacer" label="IMAGE_SPACER3" />
+				<field 
+					name="img3"					
+					default="" 
+					type="media"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_DESC" />
+					
+				
+				<field 
+					name="alt3" 
+					type="textarea"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_DESC"/>
+				
+				<field 
+					name="url3" 
+					type="textarea"
+					rows="2" 
+					cols="40"  
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_DESC"/>	
+				<field
+					name="target3"
+					type="list"
+					default="_self"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_DESC">
+					<option	value="_blank">_blank</option>
+					<option	value="_self">_self</option>
+					<option	value="_parent">_parent</option>
+					<option	value="_top">_top</option>
+				</field>
+				
+				<field 
+					name="html3"
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_DESC"/>
+
+			
+			<field type="spacer" label="IMAGE_SPACER4" />
+				<field 
+					name="img4"					
+					default="" 
+					type="media"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_DESC" />
+					
+				
+				<field 
+					name="alt4" 
+					type="textarea"
+					rows="2" 
+					cols="40" 
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_DESC"/>
+				
+				<field 
+					name="url4" 
+					type="textarea"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_DESC"/>	
+				<field
+					name="target4"
+					type="list"
+					default="_self"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_DESC">
+					<option	value="_blank">_blank</option>
+					<option	value="_self">_self</option>
+					<option	value="_parent">_parent</option>
+					<option	value="_top">_top</option>
+				</field>
+				
+				<field 
+					name="html4"
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_DESC"/>
+
+			<field type="spacer" label="IMAGE_SPACER5" />
+				<field 
+					name="img5"					
+					default="" 
+					type="media"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_DESC" />
+					
+			
+				<field 
+					name="alt5" 
+					type="textarea"
+					rows="2" 
+					cols="40"  
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_DESC"/>
+				
+				<field 
+					name="url5" 
+					type="textarea"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_DESC"/>	
+				<field
+					name="target5"
+					type="list"
+					default="_self"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_DESC">
+					<option	value="_blank">_blank</option>
+					<option	value="_self">_self</option>
+					<option	value="_parent">_parent</option>
+					<option	value="_top">_top</option>
+				</field>
+				
+				<field 
+					name="html5"
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_DESC"/>
+			
+
+			
+<field type="spacer" label="IMAGE_SPACER6" />
+				<field 
+					name="img6"					
+					default="" 
+					type="media"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_DESC" />
+					
+				
+				<field 
+					name="alt6" 
+					type="textarea"
+					rows="2" 
+					cols="40" 
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_DESC"/>
+				
+				<field 
+					name="url6" 
+					type="textarea"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_DESC"/>	
+				<field
+					name="target6"
+					type="list"
+					default="_self"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_DESC">
+					<option	value="_blank">_blank</option>
+					<option	value="_self">_self</option>
+					<option	value="_parent">_parent</option>
+					<option	value="_top">_top</option>
+				</field>
+				
+				<field 
+					name="html6"
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_DESC"/>
+				
+
+<field type="spacer" label="IMAGE_SPACER7" />
+				<field 
+					name="img7"					
+					default="" 
+					type="media"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_DESC" />
+					
+				
+				<field 
+					name="alt7" 
+					type="textarea"
+					rows="2" 
+					cols="40" 
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_DESC"/>
+				
+				<field 
+					name="url7" 
+					type="textarea"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_DESC"/>	
+				<field
+					name="target7"
+					type="list"
+					default="_self"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_DESC">
+					<option	value="_blank">_blank</option>
+					<option	value="_self">_self</option>
+					<option	value="_parent">_parent</option>
+					<option	value="_top">_top</option>
+				</field>
+				
+				<field 
+					name="html7"
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_DESC"/>
+				
+				
+			<field type="spacer" label="IMAGE_SPACER8" />
+				<field 
+					name="img8"					
+					default="" 
+					type="media"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_DESC" />
+					
+				
+				<field 
+					name="alt8" 
+					type="textarea"
+					rows="2" 
+					cols="40" 
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_DESC"/>
+				
+				<field 
+					name="url8" 
+					type="textarea"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_DESC"/>	
+				<field
+					name="target8"
+					type="list"
+					default="_self"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_DESC">
+					<option	value="_blank">_blank</option>
+					<option	value="_self">_self</option>
+					<option	value="_parent">_parent</option>
+					<option	value="_top">_top</option>
+				</field>
+				
+				<field 
+					name="html8"
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_DESC"/>
+				
+			
+				
+			
+			<field type="spacer" label="IMAGE_SPACER9" />
+				<field 
+					name="img9"					
+					default="" 
+					type="media"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_DESC" />
+				
+			
+				<field 
+					name="alt9" 
+					type="textarea"
+					rows="2" 
+					cols="40" 
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_DESC"/>
+				
+				<field 
+					name="url9" 
+					type="textarea"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_DESC"/>	
+				<field
+					name="target9"
+					type="list"
+					default="_self"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_DESC">
+					<option	value="_blank">_blank</option>
+					<option	value="_self">_self</option>
+					<option	value="_parent">_parent</option>
+					<option	value="_top">_top</option>
+				</field>
+				
+				<field 
+					name="html9"
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_DESC"/>
+				
+				
+
+			
+			<field type="spacer" label="IMAGE_SPACER10" />
+				<field 
+					name="img10"					
+					default="" 
+					type="media"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_IMAGE_DESC" />
+			
+				<field 
+					name="alt10" 
+					type="textarea"
+					rows="2" 
+					cols="40"  
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_ALT_DESC"/>
+				
+				<field 
+					name="url10" 
+					type="textarea"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_URL_DESC"/>	
+				<field
+					name="target10"
+					type="list"
+					default="_self"
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_LABEL"
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_TARGET_DESC">
+					<option	value="_blank">_blank</option>
+					<option	value="_self">_self</option>
+					<option	value="_parent">_parent</option>
+					<option	value="_top">_top</option>
+				</field>
+				
+				<field 
+					name="html10"
+					type="textarea"
+					filter="raw"
+					rows="2" 
+					cols="40"
+					default="" 
+					label="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_LABEL" 
+					description="MOD_EXT_OWL_CAROUSEL_IMAGES_FIELD_HTML_DESC"/>
+		
+			
+			</fieldset>	
+			
+			<fieldset name="advanced">
+				
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+					
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					class="btn-group"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
